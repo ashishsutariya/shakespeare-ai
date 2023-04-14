@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sonnet Symphonye</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round"rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles1.css')}}" />
+    </head>
+
+  
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        </nav>
+        <!-- Masthead-->
+      <header class="masthead">
+
+        
+           <div class="textp1">
+             
+       <h1>Perplexity ? </h1>
+  <p>Perplexity is a commonly used metric for evaluating the performance of language models. It measures how well a model is able to predict a sequence of words based on the previous words in the sequence. Lower perplexity scores indicate better performance.</p>
+             
+         </div>
+
+         <div class="textp2">
+
+           <h1>Model's perplexity</h1>
+  <p>In this project, the GPT Neo model trained on Shakespeare's sonnets was evaluated using perplexity scores on a test dataset. The perplexity scores ranged from 1.68 to 355.86, with the lowest score indicating the best performance.</p>
+            
+</div>
+
+           <div class="textp3">
+
+             <h1>Optimization</h1>
+  <p>The scores show that the model's performance improves as more data is processed. The perplexity score starts at 1.68 for the first 20 samples, indicating that the model is able to generate coherent text for small inputs. As more data is processed, the perplexity score gradually increases, indicating that the model may struggle with longer sequences. However, the highest perplexity score is still relatively low at 355.86, indicating that the model is still able to generate coherent text even for longer sequences.</p>
+
+             <div class="textp4">
+
+               <h1>Note</h1>
+  <p>It is important to note that perplexity scores are not the only metric to evaluate the performance of language models. Human evaluation and other metrics like BLEU score and ROUGE score can also provide additional insights into the model's performance. Nevertheless, the perplexity scores demonstrate that the GPT Neo model trained on Shakespeare's sonnets is a promising tool for generating coherent and poetic text.</p>
+            
+</div>
+
+             
+  <div class = "plot">
+
+<iframe src="{{ url_for('static',filename='img/perplexity_plot.html') }}" style="width: 500px; height: 300px;"></iframe>
+
+  </div>
+
+  <a class="btn btn-secondary" href="/model">Try Now</a>
+                      <a class="btn btn-secondary" href="/">Go Home</a>
+    
+  <div class = "fotter">
+<div class="col-sm-3">All Rights Reserved @2023</div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-3">Built for AICAMP</div>
+  </div>
+        </header>
+    </div>
+      
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+          
+    </body>
+</html>
+

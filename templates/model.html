@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Main</title>
+<!--    <link rel="stylesheet" href="{{url_for('static',filename='css/styles3.css')}}" /> -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image:url('bg.jpg');
+			background-size: cover;
+			background-position: center;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+      background: url("../static/img/images3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+/*        background: url("../static/img/images.jpg") no-repeat center center;; */
+/* 			  max-width: 960px; */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+		}
+
+		button {
+	background-color: grey;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-bottom: 5px;
+	margin-top: 40px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+button + button {
+	margin-left: 10px;
+}
+		.search-bar {
+       background-color: #8D918D;
+/* 			background-color: #fff; */
+			border-radius: 5px;
+			padding: 20px;
+			margin-top: 20px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+			box-sizing: border-box;
+		}
+
+		#inputfield input[type="text"], #inputfield input[type="submit"] {
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			box-sizing: border-box;
+		}
+
+		#inputfield input[type="text"] {
+			width: 70%;
+			margin-right: 10px;
+		}
+
+		#inputfield input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			width: 25%;
+		}
+
+		.textbox {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+			box-sizing: border-box;
+		}
+
+		.textbox input[type="text"] {
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.textbox p {
+			margin-top: 10px;
+			font-size: 16px;
+			color: #666;
+		}
+
+       section {
+          
+        display: flex;
+       
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 2px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        padding: 20px;
+         padding-top: 40px;
+         display: block;
+  margin: 0 auto;
+      }
+      .qa {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .question {
+        background-color: grey;
+        color: black;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+      }
+      .answer {
+        background-color: white;
+        color: grey;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+      }
+    .enclosing-div {
+        padding-top: 40px;
+      }
+     #qa-section {
+    display: none;
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: darkgrey;
+  }
+     form {
+        background-color: lightgrey;
+        padding: 10px;
+    }
+    
+    input[type="text"], input[type="submit"] {
+        background-color: #333333;
+        color: #000000;
+        padding: 5px;
+        border: none;
+    }
+    
+	</style>
+   
+</head>
+<body>
+
+<div class="container">
+  <button onclick="window.location.href='/'"> Go Home</button>
+	<div class="search-bar">
+		<div id="select">
+		</div>
+
+		<form method="POST" id="inputfield" action="{{ url_for('model') }}">
+			<input type="text" name="prompt" placeholder="Enter a prompt...">
+			<input type="submit" value="Submit">
+		</form>
+
+    <div class="textbox">
+    {% if processed_prompt %}
+        <p>{{ processed_prompt }}</p>
+    {% else %}
+        <span>Please allow me to be co creative with you to generate sonnets !</span>
+    {% endif %}
+</div>
+
+  
+      
+
+	</div>
+  <button id="show-hide-btn" onclick="toggleSection()"> Click here! See some samples of prompts and responses from our world class sonet artist AI</button>
+   <div class="enclosing-div"> 
+      
+     
+     <section  id="qa-section">
+      <h1>Samples for prompts and responses from our creative genius ! </h1>
+      <div class="qa">
+        <div class="question">the trees are green; the wild flowers are golden; the birds are singing; and the sun itself is glittering</div>
+        <div class="answer">the trees are green; the wild flowers are golden; the birds are singing; and the sun itself is glitteringand radiant.
+
+This particular tree holds a special place in the heart of my father. It is the one that was planted to, like the eyes of a child whom we love: then, when I look upon all these wonderful features</div>
+      </div>
+      <div class="qa">
+        <div class="question">We want all beautiful creatures to reproduce themselves so that beauty’s flower will not die out; </div>
+        <div class="answer">We want all beautiful creatures to reproduce themselves so that beauty’s flower will not die out; only by so doing will we live in peace and joy. We want all men free from want and fear – men capable of the utmost self-control.</div>
+      </div>
+      <div class="qa">
+        <div class="question">Time, that so carefully made those beautiful eyes that every other eye gazes at, will become a tyrant to those same lovely eyes</div>
+        <div class="answer">Time, that so carefully made those beautiful eyes that every other eye gazes at, will become a tyrant to those same lovely eyes look into, and wonder at, yet only one soul will be able to see.
+The wind blows across the field, and as its noise swipes and whistles and tumbles the grass, it.</div>
+      </div>
+    </section>
+   </div>
+</div>
+ 
+<script>
+      function toggleSection() {
+        var section = document.getElementById("qa-section");
+        if (section.style.display === "none") {
+          section.style.display = "flex";
+        } else {
+          section.style.display = "none";
+        }
+      }
+    </script>
+</body>
+</html>
