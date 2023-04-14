@@ -66,6 +66,7 @@ app.secret_key = os.urandom(64)
 def query(text):
   payload = {"inputs": text}
   API_URL = "https://api-inference.huggingface.co/models/Ashish9879/aic_shakespeare"
+  # API_URL = "https://api-inference.huggingface.co/models/Ashish9879/aic_shakespeare2"
   headers = {"Authorization": "Bearer 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"}
   response = requests.post(API_URL, headers=headers, json=payload)
   try:
