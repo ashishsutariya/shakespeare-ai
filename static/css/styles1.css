@@ -11329,3 +11329,6 @@ button.btn-secondary:hover {
     padding: 19px;
     color: #fff;
 }
+.lmnav{
+  padding-block: inherit;
+}
